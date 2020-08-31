@@ -1,0 +1,12 @@
+install.packages("rworldmap")
+library(rworldmap)
+install.packages("RColorBrewer")
+library(RColorBrewer)
+setwd("~/Desktop/R/")
+data <- read.csv("blog.csv", na.strings = c("x", "NA"))
+mapped_data <- joinCountryData2Map(data, joinCode = "NAME", nameJoinColumn = "country",
+                                  nameCountryColumn = "country")
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+colourPalette <- RColorBrewer::brewer.pal(7,"GnBu")
+#op <- palette(c("green","yellow","orange","red"))
+mapCountryData(mapped_data,nameColumnToPlot = "views",colourPalette=colourPalette)
