@@ -24,7 +24,7 @@ new$PC1 <- as.numeric(as.character(new$PC1))
 new$PC2 <- as.numeric(as.character(new$PC2))
 
 #### GIF METHOD 2 ####
-for (i in 1:5){
+for (i in 1:180){
   png(paste("test",i,".png"), units="in", width=8, height=4, res=200)
   degs <- seq(0,2*pi,by=(2*pi)/180)
   X <- -0.05+0.15*sin(degs[i]) # x coordinate
